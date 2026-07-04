@@ -6,206 +6,243 @@
   <title>iWorkMatch | AI Career Intelligence Platform</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #fffdf8;
+      background: #ffffff;
       color: #111827;
     }
 
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, rgba(212, 160, 45, 0.16), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
+    }
+
     header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 28px 7%;
-      background: rgba(255,255,255,0.9);
-      border-bottom: 1px solid #f1e4c7;
     }
 
-    .logo {
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-main {
       font-size: 30px;
       font-weight: 800;
-      color: #c8911f;
+      color: #b7791f;
+      letter-spacing: -1px;
     }
 
-    .logo span {
-      display: block;
-      font-size: 11px;
+    .brand-sub {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6b7280;
       letter-spacing: 4px;
-      color: #777;
-      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      font-size: 15px;
+      color: #374151;
     }
 
     nav a {
-      margin-left: 34px;
       text-decoration: none;
-      color: #333;
-      font-size: 15px;
+      color: inherit;
     }
 
-    .nav-btn {
-      border: 1px solid #c8911f;
+    .nav-button {
+      border: 1px solid #d69e2e;
+      color: #b7791f;
       padding: 12px 22px;
       border-radius: 8px;
-      color: #b17a0d;
+      font-weight: 600;
     }
 
     .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 28px 90px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
       align-items: center;
-      padding: 80px 7% 70px;
     }
 
     .badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px 18px;
+      border: 1px solid rgba(214, 158, 46, 0.35);
       border-radius: 999px;
-      border: 1px solid #efd7a3;
-      background: #fff7e7;
-      color: #b17a0d;
-      font-size: 13px;
+      background: rgba(214, 158, 46, 0.08);
+      color: #b7791f;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      margin-bottom: 28px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     h1 {
+      margin: 28px 0 0;
       font-size: clamp(46px, 6vw, 76px);
-      line-height: 1.05;
-      margin: 0;
-      letter-spacing: -2px;
+      line-height: 1.04;
+      letter-spacing: -3px;
+      color: #111827;
     }
 
     h1 span {
-      color: #c8911f;
+      color: #c98a17;
     }
 
-    .hero p {
-      max-width: 620px;
-      color: #555;
-      font-size: 19px;
+    .hero-text {
+      margin-top: 26px;
+      max-width: 640px;
+      font-size: 20px;
       line-height: 1.7;
-      margin: 28px 0 38px;
+      color: #4b5563;
     }
 
-    .cta-row {
+    .actions {
+      margin-top: 38px;
       display: flex;
-      gap: 18px;
+      gap: 20px;
       align-items: center;
       flex-wrap: wrap;
     }
 
     .primary-btn {
-      background: linear-gradient(135deg, #c8911f, #e7b94b);
-      color: white;
-      text-decoration: none;
-      padding: 16px 30px;
+      background: linear-gradient(135deg, #b7791f, #e3ad3d);
+      color: #ffffff;
+      padding: 16px 28px;
       border-radius: 9px;
+      text-decoration: none;
       font-weight: 700;
-      box-shadow: 0 15px 30px rgba(200,145,31,0.25);
+      box-shadow: 0 14px 30px rgba(183, 121, 31, 0.22);
     }
 
-    .secondary-text {
-      color: #666;
+    .note {
+      color: #6b7280;
       font-size: 15px;
     }
 
-    .visual {
+    .mockup {
       position: relative;
-      min-height: 420px;
-      background: radial-gradient(circle, #fff1c6 0%, #fffdf8 65%);
-      border-radius: 40px;
-      padding: 28px;
+      min-height: 470px;
     }
 
-    .score-card, .mini-card {
-      background: rgba(255,255,255,0.95);
-      border: 1px solid #f0dfbd;
-      border-radius: 22px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-    }
-
-    .score-card {
+    .panel {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(214, 158, 46, 0.18);
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
       padding: 32px;
-      max-width: 390px;
+    }
+
+    .main-card {
+      width: 78%;
       margin-left: auto;
     }
 
     .score {
-      width: 135px;
-      height: 135px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 15px solid #d9a32e;
+      border: 14px solid #e3ad3d;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 34px;
+      font-size: 30px;
       font-weight: 800;
-      margin: 20px 0;
+      margin: 24px 0;
     }
 
-    .lines div {
-      height: 8px;
+    .bar {
+      height: 9px;
       border-radius: 999px;
-      background: #e5e0d8;
+      background: #e5e7eb;
       margin: 16px 0;
       overflow: hidden;
     }
 
-    .lines span {
+    .bar span {
       display: block;
       height: 100%;
-      background: #d9a32e;
+      background: linear-gradient(90deg, #b7791f, #e3ad3d);
       border-radius: 999px;
     }
 
-    .mini-card {
+    .small-card {
       position: absolute;
-      padding: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(214, 158, 46, 0.2);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(17, 24, 39, 0.1);
+      padding: 22px;
       width: 250px;
     }
 
     .skills {
-      left: 20px;
-      bottom: 30px;
+      left: 0;
+      bottom: 36px;
     }
 
     .gap {
       right: 0;
-      bottom: 10px;
+      bottom: 0;
     }
 
-    .mini-card h3 {
-      margin: 0 0 14px;
+    .small-card h3,
+    .panel h3 {
+      margin: 0 0 16px;
       font-size: 17px;
     }
 
-    .mini-card p {
-      margin: 12px 0;
+    .item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 14px 0;
+      color: #4b5563;
       font-size: 14px;
-      color: #555;
     }
 
     .section {
-      padding: 70px 7%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 28px 80px;
       text-align: center;
     }
 
     .section-label {
-      color: #c8911f;
+      color: #b7791f;
       font-size: 13px;
-      letter-spacing: 2px;
       font-weight: 800;
-      margin-bottom: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .section h2 {
+      margin: 16px 0 40px;
       font-size: clamp(30px, 4vw, 42px);
-      margin: 0 0 40px;
+      letter-spacing: -1px;
     }
 
     .features {
@@ -215,93 +252,117 @@
     }
 
     .feature-card {
-      background: white;
-      border: 1px solid #f0dfbd;
+      background: #ffffff;
+      border: 1px solid rgba(214, 158, 46, 0.22);
       border-radius: 22px;
-      padding: 42px 30px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+      padding: 38px 30px;
+      box-shadow: 0 18px 45px rgba(17, 24, 39, 0.05);
     }
 
     .icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 22px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
-      background: #fff2d2;
+      background: rgba(214, 158, 46, 0.12);
+      color: #b7791f;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #c8911f;
+      margin: 0 auto 24px;
       font-size: 30px;
     }
 
     .feature-card h3 {
       margin: 0 0 14px;
-      font-size: 22px;
+      font-size: 21px;
     }
 
     .feature-card p {
-      color: #666;
-      line-height: 1.6;
       margin: 0;
+      color: #6b7280;
+      line-height: 1.7;
+      font-size: 15px;
     }
 
     .coming-soon {
-      margin: 70px 7%;
-      padding: 46px;
-      border: 1px solid #edd7a8;
+      max-width: 1100px;
+      margin: 0 auto 50px;
+      padding: 42px;
+      border: 1px solid rgba(214, 158, 46, 0.24);
       border-radius: 26px;
-      background: linear-gradient(135deg, #fffaf0, #ffffff);
+      background: #ffffff;
+      box-shadow: 0 20px 60px rgba(17, 24, 39, 0.06);
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: center;
     }
 
-    .coming-soon h2 {
-      margin: 0;
-      color: #b17a0d;
+    .soon-title {
       font-size: 34px;
+      font-weight: 800;
+      color: #b7791f;
     }
 
-    .coming-soon p {
-      color: #666;
+    .soon-sub {
+      margin-top: 8px;
+      letter-spacing: 6px;
+      color: #c98a17;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .soon-text {
+      margin-top: 22px;
+      color: #6b7280;
       line-height: 1.7;
     }
 
-    .email-box {
+    .waitlist-box {
+      text-align: left;
+    }
+
+    .waitlist-box h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    .email-row {
       display: flex;
-      gap: 0;
+      margin-top: 22px;
+      border: 1px solid rgba(214, 158, 46, 0.24);
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    .email-box input {
+    .email-row input {
       flex: 1;
+      border: none;
       padding: 16px;
-      border: 1px solid #ead8b5;
-      border-radius: 9px 0 0 9px;
       font-size: 15px;
+      outline: none;
     }
 
-    .email-box button {
+    .email-row button {
       border: none;
-      background: #d9a32e;
+      background: linear-gradient(135deg, #b7791f, #e3ad3d);
       color: white;
       padding: 0 24px;
-      border-radius: 0 9px 9px 0;
       font-weight: 700;
       cursor: pointer;
     }
 
     footer {
-      padding: 30px 7%;
-      color: #888;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px 34px;
+      color: #9ca3af;
       font-size: 14px;
     }
 
     @media (max-width: 900px) {
       header {
-        flex-direction: column;
-        gap: 18px;
+        align-items: flex-start;
       }
 
       nav {
@@ -310,17 +371,15 @@
 
       .hero {
         grid-template-columns: 1fr;
-        padding-top: 50px;
+        padding-top: 40px;
       }
 
-      .visual {
-        min-height: auto;
+      .mockup {
+        min-height: 520px;
       }
 
-      .mini-card {
-        position: static;
+      .main-card {
         width: 100%;
-        margin-top: 18px;
       }
 
       .features,
@@ -328,15 +387,24 @@
         grid-template-columns: 1fr;
       }
 
-      .email-box {
-        flex-direction: column;
-        gap: 12px;
+      .small-card {
+        position: relative;
+        width: 100%;
+        margin-top: 18px;
       }
 
-      .email-box input,
-      .email-box button {
-        border-radius: 9px;
-        width: 100%;
+      .skills,
+      .gap {
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+
+      .email-row {
+        flex-direction: column;
+      }
+
+      .email-row button {
         padding: 16px;
       }
     }
@@ -344,121 +412,124 @@
 </head>
 
 <body>
-
-  <header>
-    <div class="logo">
-      iWorkMatch
-      <span>AI CAREER INTELLIGENCE</span>
-    </div>
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#contact" class="nav-btn">Coming Soon</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="about">
-    <div>
-      <div class="badge">AI-POWERED CAREER INTELLIGENCE</div>
-
-      <h1>
-        Know how well you match a role <span>before you apply.</span>
-      </h1>
-
-      <p>
-        iWorkMatch analyses job descriptions, resumes and skill gaps to help
-        professionals make smarter career decisions with clear, data-driven insights.
-      </p>
-
-      <div class="cta-row">
-        <a href="#contact" class="primary-btn">Launching Soon 🚀</a>
-        <div class="secondary-text">Stay tuned for early access</div>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-main">iWorkMatch</div>
+        <div class="brand-sub">AI Career Intelligence</div>
       </div>
-    </div>
 
-    <div class="visual">
-      <div class="score-card">
-        <strong>Match Score</strong>
-        <div class="score">86%</div>
-        <strong>⭐ Strong Match</strong>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#coming-soon" class="nav-button">Coming Soon</a>
+      </nav>
+    </header>
 
-        <div class="lines">
-          <div><span style="width: 85%;"></span></div>
-          <div><span style="width: 72%;"></span></div>
-          <div><span style="width: 64%;"></span></div>
+    <section class="hero" id="about">
+      <div>
+        <div class="badge">✦ AI-Powered Career Intelligence</div>
+
+        <h1>
+          Know how well you match a role <span>before you apply.</span>
+        </h1>
+
+        <p class="hero-text">
+          iWorkMatch analyses job descriptions, resumes and skill gaps to help
+          professionals make smarter career decisions with clear, data-driven insights.
+        </p>
+
+        <div class="actions">
+          <a class="primary-btn" href="#coming-soon">Launching Soon 🚀</a>
+          <div class="note">Stay tuned for early access</div>
         </div>
       </div>
 
-      <div class="mini-card skills">
-        <h3>Top Matched Skills</h3>
-        <p>✓ Project Management</p>
-        <p>✓ Data Analysis</p>
-        <p>✓ Communication</p>
-        <p>✓ Problem Solving</p>
+      <div class="mockup">
+        <div class="panel main-card">
+          <h3>Match Score</h3>
+          <div class="score">86%</div>
+          <div class="item"><strong>Strong Match</strong><span>AI Analysis</span></div>
+          <div class="bar"><span style="width: 86%;"></span></div>
+          <div class="bar"><span style="width: 72%;"></span></div>
+          <div class="bar"><span style="width: 64%;"></span></div>
+        </div>
+
+        <div class="small-card skills">
+          <h3>Top Matched Skills</h3>
+          <div class="item"><span>Project Management</span><span>✓</span></div>
+          <div class="item"><span>Data Analysis</span><span>✓</span></div>
+          <div class="item"><span>Communication</span><span>✓</span></div>
+          <div class="item"><span>Problem Solving</span><span>✓</span></div>
+        </div>
+
+        <div class="small-card gap">
+          <h3>Skills Gap</h3>
+          <div class="item"><span>Advanced SQL</span><span>○</span></div>
+          <div class="item"><span>Cloud Architecture</span><span>○</span></div>
+          <div class="item"><span>Data Visualisation</span><span>○</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-label">What iWorkMatch will help you do</div>
+      <h2>Smarter decisions. Better opportunities.</h2>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="icon">▣</div>
+          <h3>Resume Matching</h3>
+          <p>
+            Compare your resume against job requirements and understand your suitability
+            for each role.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">▥</div>
+          <h3>Skills Gap Analysis</h3>
+          <p>
+            Identify missing skills, experience gaps and improvement areas before applying.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">✦</div>
+          <h3>Career Insights</h3>
+          <p>
+            Receive personalised recommendations to strengthen your profile and career readiness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming-soon" id="coming-soon">
+      <div>
+        <div class="soon-title">iWorkMatch</div>
+        <div class="soon-sub">LAUNCHING SOON</div>
+        <p class="soon-text">
+          Be the first to experience AI-powered career intelligence designed to
+          help job seekers understand their match, gaps and readiness before applying.
+        </p>
       </div>
 
-      <div class="mini-card gap">
-        <h3>Skills Gap</h3>
-        <p>○ Advanced SQL</p>
-        <p>○ Cloud Architecture</p>
-        <p>○ Data Visualisation</p>
+      <div class="waitlist-box">
+        <h3>Join the waitlist</h3>
+        <p class="soon-text">
+          Early access and launch updates will be available soon.
+        </p>
+
+        <div class="email-row">
+          <input type="email" placeholder="Enter your email address" />
+          <button>Notify Me</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="features">
-    <div class="section-label">WHAT IWORKMATCH WILL HELP YOU DO</div>
-    <h2>Smarter decisions. Better opportunities.</h2>
-
-    <div class="features">
-      <div class="feature-card">
-        <div class="icon">📄</div>
-        <h3>Resume Matching</h3>
-        <p>Compare your resume against job requirements and understand your suitability for each role.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon">📊</div>
-        <h3>Skills Gap Analysis</h3>
-        <p>Identify missing skills, experience gaps and improvement areas before applying.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon">💡</div>
-        <h3>Career Insights</h3>
-        <p>Receive personalised recommendations to strengthen your profile and career readiness.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="coming-soon" id="contact">
-    <div>
-      <h2>iWorkMatch</h2>
-      <h3>LAUNCHING SOON</h3>
-      <p>
-        Be the first to experience AI-powered career intelligence that helps you
-        understand your job fit before applying.
-      </p>
-    </div>
-
-    <div>
-      <h3>Join the waitlist</h3>
-      <p>Get early access and launch updates.</p>
-
-      <div class="email-box">
-        <input type="email" placeholder="Enter your email address" />
-        <button>Notify Me</button>
-      </div>
-
-      <p style="font-size: 13px;">We respect your privacy. No spam, ever.</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 iWorkMatch. All rights reserved.
-  </footer>
-
+    <footer>
+      © 2026 iWorkMatch. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
